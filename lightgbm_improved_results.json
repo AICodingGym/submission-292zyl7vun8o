@@ -1,0 +1,27 @@
+{
+  "experiment": "lightgbm_leads_rolling",
+  "features": [
+    "delta_time",
+    "u_in_time_cumsum",
+    "u_in_lead_1",
+    "u_in_lead_2",
+    "u_in_lead_3",
+    "u_in_rolling_mean_3",
+    "u_in_rolling_mean_5",
+    "u_in_rolling_mean_10",
+    "R",
+    "C",
+    "time_step",
+    "u_in",
+    "u_out",
+    "u_in_cumsum",
+    "u_in_lag_1",
+    "u_in_lag_2",
+    "u_in_lag_3",
+    "u_in_lag_5"
+  ],
+  "validation_fraction": 0.2,
+  "random_state": 42,
+  "validation_inspiratory_mae": 0.8478469074266569,
+  "runtime_seconds": 43.57670820900239
+}

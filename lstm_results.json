@@ -1,0 +1,7 @@
+{
+  "experiment": "bidirectional_lstm",
+  "best_validation_mae": 1.1253765218570349,
+  "runtime_seconds": 181.84064795891754,
+  "device": "mps",
+  "epochs_completed": 15
+}

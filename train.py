@@ -42,9 +42,30 @@ for lag in [1, 2, 3, 5]:
         breaths["u_in"].shift(lag).fillna(0)
     )
 
+for lead in [1, 2, 3]:
+    df[f"u_in_lead_{lead}"] = (
+        breaths["u_in"].shift(-lead).fillna(0)
+    )
+
+for window in [3, 5, 10]:
+    df[f"u_in_rolling_mean_{window}"] = (
+        df.groupby("breath_id", sort=False)["u_in"]
+        .transform(
+            lambda values: values.rolling(
+                window=window, min_periods=1
+            ).mean()
+        )
+    )
+
 features = [
     "delta_time",
     "u_in_time_cumsum",
+    "u_in_lead_1",
+    "u_in_lead_2",
+    "u_in_lead_3",
+    "u_in_rolling_mean_3",
+    "u_in_rolling_mean_5",
+    "u_in_rolling_mean_10",
     "R",
     "C",
     "time_step",
@@ -110,7 +131,7 @@ print(f"Validation inspiratory MAE: {mae:.6f}")
 print(f"Training + prediction time: {runtime:.1f} seconds")
 
 result = {
-    "experiment": "lightgbm_time_weighted_input",
+    "experiment": "lightgbm_leads_rolling",
     "features": features,
     "validation_fraction": 0.20,
     "random_state": 42,
@@ -118,7 +139,7 @@ result = {
     "runtime_seconds": runtime
 }
 
-with open(BASE_DIR / "time_weighted_results.json", "w") as f:
+with open(BASE_DIR / "leads_rolling_results.json", "w") as f:
     json.dump(result, f, indent=2)
 
-print("Saved time_weighted_results.json")
+print("Saved leads_rolling_results.json")
