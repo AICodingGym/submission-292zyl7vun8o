@@ -1,0 +1,21 @@
+{
+  "experiment": "lightgbm_time_weighted_input",
+  "features": [
+    "delta_time",
+    "u_in_time_cumsum",
+    "R",
+    "C",
+    "time_step",
+    "u_in",
+    "u_out",
+    "u_in_cumsum",
+    "u_in_lag_1",
+    "u_in_lag_2",
+    "u_in_lag_3",
+    "u_in_lag_5"
+  ],
+  "validation_fraction": 0.2,
+  "random_state": 42,
+  "validation_inspiratory_mae": 1.1756273027342277,
+  "runtime_seconds": 12.54834795894567
+}

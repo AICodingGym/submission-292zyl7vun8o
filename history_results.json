@@ -1,0 +1,19 @@
+{
+  "experiment": "lightgbm_history_features",
+  "features": [
+    "R",
+    "C",
+    "time_step",
+    "u_in",
+    "u_out",
+    "u_in_cumsum",
+    "u_in_lag_1",
+    "u_in_lag_2",
+    "u_in_lag_3",
+    "u_in_lag_5"
+  ],
+  "validation_fraction": 0.2,
+  "random_state": 42,
+  "validation_inspiratory_mae": 1.378992326898186,
+  "runtime_seconds": 12.147628834005445
+}

@@ -1,0 +1,14 @@
+{
+  "experiment": "baseline_lightgbm",
+  "features": [
+    "R",
+    "C",
+    "time_step",
+    "u_in",
+    "u_out"
+  ],
+  "validation_fraction": 0.2,
+  "random_state": 42,
+  "validation_inspiratory_mae": 4.03610692379385,
+  "runtime_seconds": 9.930458582937717
+}
