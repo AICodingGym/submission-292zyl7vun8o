@@ -1,6 +1,11 @@
 {
   "experiment": "lightgbm_leads_rolling",
   "features": [
+    "u_in_R",
+    "volume_C",
+    "RC",
+    "u_in_diff",
+    "u_in_rate",
     "delta_time",
     "u_in_time_cumsum",
     "u_in_lead_1",
@@ -22,6 +27,6 @@
   ],
   "validation_fraction": 0.2,
   "random_state": 42,
-  "validation_inspiratory_mae": 0.6650786535775364,
-  "runtime_seconds": 111.26483225007541
+  "validation_inspiratory_mae": 0.6546774360306443,
+  "runtime_seconds": 117.4028514160309
 }
